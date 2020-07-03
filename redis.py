@@ -35,11 +35,16 @@ def remove(key):
         return False
 
 def have(key):
+    global keys
     try:
         keys.index(key)
         return True
     except:
         return False
+
+def count():
+    global keys
+    return len(keys)
 
 def main():
     print('pyredis v0.0')
@@ -48,11 +53,13 @@ def main():
     set('k2','v2')
     print(get('k2'))
     set('k','v3')
+    print(count())
     print(get('k'))
     print(remove('k'))
     print(get('k'))
     print(remove('k'))
     print(remove('k2'))
+    print(count())
 
 if __name__=='__main__':
     main()
