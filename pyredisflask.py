@@ -24,4 +24,8 @@ def remove():
 def save():
     return str(redis.save())
 
+@app.route('/load')
+def load():
+    return str(redis.load())
+
 app.run()
