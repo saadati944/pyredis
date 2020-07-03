@@ -16,4 +16,8 @@ def set():
 def get():
     return str(redis.get(request.values['key']))
 
+@app.route('/remove',methods=['GET','POST'])
+def remove():
+    return str(redis.remove(request.values['key']))
+
 app.run()
