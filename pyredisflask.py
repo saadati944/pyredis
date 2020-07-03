@@ -20,4 +20,8 @@ def get():
 def remove():
     return str(redis.remove(request.values['key']))
 
+@app.route('/save')
+def save():
+    return str(redis.save())
+
 app.run()
