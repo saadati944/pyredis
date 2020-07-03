@@ -46,6 +46,19 @@ def count():
     global keys
     return len(keys)
 
+def save(path='pyredis.data')
+    global keys,values
+    import pickle
+    try:
+        f=open(path,'wb')
+        pickle.dump((keys,values),f)
+        f.close()
+        return True
+    except:
+        return False
+
+
+
 def main():
     print('pyredis v0.0')
     set('k','v')
