@@ -57,6 +57,16 @@ def save(path='pyredis.data')
     except:
         return False
 
+def load(path='pyredis.data'):
+    global keys,values
+    import pickle
+    try:
+        f=open(path,'rb')
+        keys,values=pickle.load(f)
+        f.close()
+        return True
+    except:
+        return False
 
 
 def main():
