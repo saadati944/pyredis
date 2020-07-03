@@ -12,4 +12,8 @@ def home():
 def set():
     return str(redis.set(request.values['key'],request.values['value']))
 
+@app.route('/get',methods=['GET','POST'])
+def get():
+    return str(redis.get(request.values['key']))
+
 app.run()
