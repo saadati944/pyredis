@@ -1,5 +1,6 @@
 keys=[]
 values=[]
+nullvalue=''
 
 def set(key,value):
     global keys,values
@@ -16,14 +17,22 @@ def set(key,value):
             return 0
     return 0
 
+def get(key):
+    global keys,values
+    try:
+        i=keys.index(key)
+        return values[i]
+    except:
+        return nullvalue
+
 def main():
     print('pyredis v0.0')
     set('k','v')
-    print(keys,values)
+    print(get('k'))
     set('k2','v2')
-    print(keys,values)
+    print(get('k2'))
     set('k','v3')
-    print(keys,values)
+    print(get('k'))
 
 if __name__=='__main__':
     main()
