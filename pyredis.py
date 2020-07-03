@@ -46,7 +46,7 @@ def count():
     global keys
     return len(keys)
 
-def save(path='pyredis.data')
+def save(path='pyredis.data'):
     global keys,values
     import pickle
     try:
