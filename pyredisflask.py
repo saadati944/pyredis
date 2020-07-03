@@ -1,5 +1,5 @@
 from flask import Flask,request
-import pyredis
+import pyredis as redis
 
 app=Flask(__name__)
 

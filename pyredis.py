@@ -7,7 +7,7 @@ def set(key,value):
     try:
         i=keys.index(key)
         values[i]=value
-        return 1
+        return True
     except:
         try:
             keys.append(key)
