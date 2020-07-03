@@ -12,10 +12,10 @@ def set(key,value):
         try:
             keys.append(key)
             values.append(value)
-            return 1
+            return True
         except:
-            return 0
-    return 0
+            return False
+    return False
 
 def get(key):
     global keys,values
@@ -30,9 +30,16 @@ def remove(key):
         i=keys.index(key)
         keys.pop(i)
         values.pop(i)
-        return 1
+        return True
     except:
-        return 0
+        return False
+
+def have(key):
+    try:
+        keys.index(key)
+        return True
+    except:
+        return False
 
 def main():
     print('pyredis v0.0')
